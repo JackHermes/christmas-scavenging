@@ -1,0 +1,39 @@
+<div>This is Papa's page</div>
+<div>
+  Tanner'll need this character name:
+  <blockquote>
+    Joe Hardy
+  </blockquote>
+</div>
+<div>
+  And here's where you put your key:
+  <br />
+  <textarea id="textBox" name="key" rows="1" cols="40">
+  </textarea>
+  <br />
+  <br />
+  <p>When it matches, a train of excited links leading on will pop up here!</p>
+</div>
+<div id="mamaMatch"></div>
+<script type="text/javascript">
+  var intervalID = window.setInterval(rightChar, 1000);
+
+  function rightChar() {
+    var textBox = document.getElementById('textBox');
+    var word = "Dromgar";
+
+    if(textBox.value.indexOf(word) != -1) {
+      console.log('Onward!');
+
+      var newButton = document.createElement("A");
+      var newContent = document.createTextNode("Yep!");
+      newButton.appendChild(newContent);
+      newButton.href = "./papa-clue.html";
+
+      var currentDiv = document.getElementById("mamaMatch");
+
+      document.body.insertBefore(newButton, currentDiv)
+    }
+  }
+
+</script>

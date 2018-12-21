@@ -1,0 +1,30 @@
+<div>
+  <p>Here's a clue to where your first gift is:</p>
+  <blockquote>Sometimes us kids liked small spaces...</blockquote>
+</div>
+<div>
+  <p>When you've found it, put its secret code here to continue on: </p>
+  <textarea id="textBox" name="code" rows="1" cols="40"></textarea>
+</div>
+<script type="text/javascript">
+  var intervalID = window.setInterval(rightChar, 1000);
+
+  function rightChar() {
+    var textBox = document.getElementById('textBox');
+    var word = "*";
+
+    if(textBox.value.indexOf(word) != -1) {
+      console.log('Onward!');
+
+      var newButton = document.createElement("A");
+      var newContent = document.createTextNode("Onward!");
+      newButton.appendChild(newContent);
+      newButton.href = "./mama-group-1.html";
+
+      var currentDiv = document.getElementById("mamaMatch");
+
+      document.body.insertBefore(newButton, currentDiv)
+    }
+  }
+
+</script>

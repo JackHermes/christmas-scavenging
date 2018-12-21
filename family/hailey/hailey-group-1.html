@@ -1,0 +1,38 @@
+<div class="">
+  <p><em>Group Stash!</em></p>
+  <p>
+    Now there's a stash of goods somewhere nearby...
+  <br/>
+    We'll work together to find it!
+  </p>
+  <p>It's a two-word clue, but the letters are scrambled among everybody. Here's your letter for the first word:
+  <br />
+  <br />
+  <strong>d</strong></p>
+  <p>What's the first word?</p>
+  <textarea id="firstWord" name="firstWord" rows="1" cols="40"></textarea>
+</div>
+<script type="text/javascript">
+  var intervalID = window.setInterval(rightChar, 1000);
+
+  function rightChar() {
+    var textBox = document.getElementById('firstWord');
+    var word = "shed";
+
+    if(textBox.value.indexOf(word) != -1) {
+      console.log('Onward!');
+
+      var newButton = document.createElement("a");
+      var newContent = document.createTextNode("Great, it's 'shed'!");
+      newButton.appendChild(newContent);
+      newButton.href = "./hailey-group-2.html";
+      newButton.id = "success";
+
+      var currentDiv = document.getElementById("mamaMatch");
+
+      document.body.insertBefore(newButton, currentDiv)
+      clearInterval(intervalID);
+      // addSecondWord();
+    }
+  }
+</script>

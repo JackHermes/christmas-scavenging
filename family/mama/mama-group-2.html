@@ -1,0 +1,47 @@
+<div>
+
+  <p><em>Group Stash!</em></p>
+  <p>
+    Now there's a stash of goods somewhere nearby...
+  <br/>
+    We'll work together to find it!
+  </p>
+  <p>It's a two-word clue, but the letters are scrambled among everybody.</p>
+  <p>The first word was 'shed'!
+    <br />
+    <br />
+     Here's your letter for the second word:
+     <br>
+     <br>
+    <strong>l</strong> (as in 'lemon')
+    <br>
+    <br>
+    <strong>Now, what's the second word?</strong>
+  </p>
+
+  <textarea id="secondWord" name="secondWord" rows="1" cols="40"></textarea>
+
+</div>
+<script type="text/javascript">
+  var intervalID = window.setInterval(rightChar, 1000);
+
+  function rightChar() {
+    var textBox = document.getElementById('secondWord');
+    var word = "till";
+
+    if(textBox.value.indexOf(word) != -1) {
+      console.log('Onward!');
+
+      var newButton = document.createElement("a");
+      var newContent = document.createTextNode("Great, it's 'till'! Now where could the stash be then...");
+      newButton.appendChild(newContent);
+
+      var image = document.createElement("img");
+      image.src = "https://media.giphy.com/media/FGbeYTiFyLYmQ/giphy.gif  ";
+
+      document.body.append(newButton);
+      document.body.append(image);
+      clearInterval(intervalID);
+    }
+  }
+</script>
